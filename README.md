@@ -6,13 +6,12 @@ Computes `C = alpha * (A @ B) + beta * C`.
 
 ## Kernels
 
-Kernel Implementation        | Latency (ms)   | TFLOP/s    | % of cuBLAS 
-----------------------------------------------------------------
-PyTorch (cuBLAS)             |          2.089 |      65.79 |     100.00%
-Level 01: Naive              |        143.744 |       0.96 |       1.45%
-Level 02: Global Coalesced   |         19.608 |       7.01 |      10.65%
-Level 03: Shared Memory      |         15.023 |       9.15 |      13.91%
--------------------------------------------------------------------------
+| Kernel Implementation      | Latency (ms) | TFLOP/s | % of cuBLAS |
+| -------------------------- | ------------ | ------- | ----------- |
+| PyTorch (cuBLAS)           | 2.089        | 65.79   | 100.00%     |
+| Level 01: Naive            | 143.744      | 0.96    | 1.45%       |
+| Level 02: Global Coalesced | 19.608       | 7.01    | 10.65%      |
+| Level 03: Shared Memory    | 15.023       | 9.15    | 13.91%      |
 
 ## Setup
 
