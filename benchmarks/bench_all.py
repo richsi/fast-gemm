@@ -15,6 +15,7 @@ def run_suite():
     ("PyTorch (cuBLAS)", lambda: torch.matmul(A, B)),
     ("Level 01: Naive", lambda: fast_gemm.matmul_naive(A, B)),
     ("Level 02: Global Coalesced", lambda: fast_gemm.matmul_global_coalesced(A, B)),
+    ("Level 03: Shared Memory", lambda: fast_gemm.matmul_shared_mem(A, B)),
   ]
 
   print(f"{'Kernel Implementation':<28} | {'Latency (ms)':<14} | {'TFLOP/s':<10} | {'% of cuBLAS':<12}")

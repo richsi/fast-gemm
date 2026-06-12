@@ -27,6 +27,9 @@ def benchmark_layer(kernel_type="naive", M=4096, N=4096, K=4096):
   elif kernel_type == "coalesced":
     target_kernel = fast_gemm.matmul_global_coalesced
     display_name = "Level 02 (Coalesced)"
+  elif kernel_type == "smem":
+    target_kernel = fast_gemm.matmul_shared_mem
+    display_name = "Level 03 (Shared Memory)"
   else:
     raise ValueError("Invalid kernel_type.")
 
